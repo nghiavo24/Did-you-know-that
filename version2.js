@@ -21,6 +21,9 @@ const answerButtons = [
 ]
 const score = document.getElementById('score');
 const scoreHeader = document.getElementById('score-header');
+const playerHeader = document.getElementById('player-name-header')
+const playerNameInput = document.getElementById('player-name')
+const resetButton = document.querySelector('.reset-btn')
 var playerAnswer = null;
 var playerAnswered = false;
 var amountWrong = 0
@@ -30,8 +33,14 @@ startButton.addEventListener('click', gameStart)
 async function gameStart () {
     //  hide/unhide html
     startButton.classList.add("hide")
+    resetButton.classList.remove("hide")
     questionElement.classList.remove("hide")
     scoreHeader.classList.remove("hide")
+    let userNameInput = playerNameInput.value
+    playerHeader.innerText = userNameInput
+    playerHeader.classList.remove("hide")
+    playerNameInput.classList.add("hide")
+    
 
     // add listeners to answer buttons to get the player answer
     for(let i =0; i < answerButtons.length; i++){
@@ -91,9 +100,9 @@ async function gameStart () {
 
         await sleep(1000)
 
-        if(amountWrong >= 3){
-            //TODO: Add logic for ending game when more than three wrong answers
-        }
+        // if(amountWrong >= 3){
+        //     //TODO: Add logic for ending game when more than three wrong answers
+        // }
 
         // reset player answer and colors
         playerAnswer = null
@@ -112,6 +121,9 @@ async function gameStart () {
         answerButtons[i].classList.add("hide")
     }
     questionElement.classList.add("hide")
+    resetButton.classList.add("hide")
+    
+    
     startButton.classList.remove("hide")
 }
 

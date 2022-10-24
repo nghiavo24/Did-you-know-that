@@ -15,12 +15,20 @@ body.wrong {
     background-color: red;
 }
 .container{
+    display: flex;
+    justify-content: center;
     width: 600px;
     max-width: 80%;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
     background-color: white;
+}
+#question-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .btn-grid {
     display: grid;
@@ -53,13 +61,14 @@ body.wrong {
     color: white;
 
 }
-.start-btn, .next-btn {
+.start-btn, .reset-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 15px 25px;
 }
-.control {
-    display: grid;
+
+.controls {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
