@@ -122,8 +122,8 @@ async function gameStart () {
     }
     questionElement.classList.add("hide")
     resetButton.classList.add("hide")
-    
-    
+    playerNameInput.value = null
+    playerNameInput.classList.remove("hide")
     startButton.classList.remove("hide")
 }
 
@@ -158,76 +158,76 @@ const marvel_questions = [
             {text: 'MJ', correct: false}
         ]
     },
-    {
-        question: 'What kind of doctor is Stephen Strange?',
-        answers: [
-            {text: 'Orthopedic Surgeon', correct: false},
-            {text: 'Plastic Surgeon', correct: false},
-            {text: 'Neurosurgeon', correct: true}
-        ]
-    },
-    {
-        question: 'What metal is Wakanda most precious resources?',
-        answers: [
-            {text: 'Adamantium', correct: false},
-            {text: 'Vibranium', correct: true},
-            {text: 'Dilithium', correct: false}
-        ]
-    },
-    {
-        question: 'What kind of cloak does Doctor Strange use?',
-        answers: [
-            {text: 'Steel', correct: false},
-            {text: 'Invincible', correct: false},
-            {text: 'Levitation', correct: true}
-        ]
-    },
-    {
-        question: 'What kind of war animal is bred by the Border Tribe in Black Panther?',
-        answers: [
-            {text: 'Panthers', correct: false},
-            {text: 'Rhinos', correct: true},
-            {text: 'Lions', correct: false}
-        ]
-    },
-    {
-        question: 'What is Black Widow final line before she sacrifices herself on Vomir?',
-        answers: [
-            {text: 'Clint', correct: false},
-            {text: 'Let me go', correct: false},
-            {text: 'It is okay', correct: true}
-        ]
-    },
-    {
-        question: 'WWhich Infinity Stone is in Loki scepter?',
-        answers: [
-            {text: 'Mind', correct: true},
-            {text: 'Space', correct: false},
-            {text: 'Power', correct: false}
-        ]
-    },
-    {
-        question: 'Which actress plays the role of an elite warrior Thena in the move Eternals?',
-        answers: [
-            {text: 'Scarlett Johansson', correct: false},
-            {text: 'Angelina Jolie', correct: true},
-            {text: 'Kim Kardashian', correct: false}
-        ]
-    },
-    {
-        question: 'What type of herb did the first Black Panther ingest to gain his power?',
-        answers: [
-            {text: 'Diamond-shaped herb', correct: false},
-            {text: 'Moon-shaped herb', correct: true},
-            {text: 'Heart-shaped herb', correct: false}
-        ]
-    },
-    {
-        question: 'Which of these Eternals is not names after a Greek or Roman God?',
-        answers: [
-            {text: 'Phastos', correct: false},
-            {text: 'Makkari', correct: false},
-            {text: 'Ikaris', correct: true}
-        ]
-    }
+    // {
+    //     question: 'What kind of doctor is Stephen Strange?',
+    //     answers: [
+    //         {text: 'Orthopedic Surgeon', correct: false},
+    //         {text: 'Plastic Surgeon', correct: false},
+    //         {text: 'Neurosurgeon', correct: true}
+    //     ]
+    // },
+    // {
+    //     question: 'What metal is Wakanda most precious resources?',
+    //     answers: [
+    //         {text: 'Adamantium', correct: false},
+    //         {text: 'Vibranium', correct: true},
+    //         {text: 'Dilithium', correct: false}
+    //     ]
+    // },
+    // {
+    //     question: 'What kind of cloak does Doctor Strange use?',
+    //     answers: [
+    //         {text: 'Steel', correct: false},
+    //         {text: 'Invincible', correct: false},
+    //         {text: 'Levitation', correct: true}
+    //     ]
+    // },
+    // {
+    //     question: 'What kind of war animal is bred by the Border Tribe in Black Panther?',
+    //     answers: [
+    //         {text: 'Panthers', correct: false},
+    //         {text: 'Rhinos', correct: true},
+    //         {text: 'Lions', correct: false}
+    //     ]
+    // },
+    // {
+    //     question: 'What is Black Widow final line before she sacrifices herself on Vomir?',
+    //     answers: [
+    //         {text: 'Clint', correct: false},
+    //         {text: 'Let me go', correct: false},
+    //         {text: 'It is okay', correct: true}
+    //     ]
+    // },
+    // {
+    //     question: 'WWhich Infinity Stone is in Loki scepter?',
+    //     answers: [
+    //         {text: 'Mind', correct: true},
+    //         {text: 'Space', correct: false},
+    //         {text: 'Power', correct: false}
+    //     ]
+    // },
+    // {
+    //     question: 'Which actress plays the role of an elite warrior Thena in the move Eternals?',
+    //     answers: [
+    //         {text: 'Scarlett Johansson', correct: false},
+    //         {text: 'Angelina Jolie', correct: true},
+    //         {text: 'Kim Kardashian', correct: false}
+    //     ]
+    // },
+    // {
+    //     question: 'What type of herb did the first Black Panther ingest to gain his power?',
+    //     answers: [
+    //         {text: 'Diamond-shaped herb', correct: false},
+    //         {text: 'Moon-shaped herb', correct: true},
+    //         {text: 'Heart-shaped herb', correct: false}
+    //     ]
+    // },
+    // {
+    //     question: 'Which of these Eternals is not names after a Greek or Roman God?',
+    //     answers: [
+    //         {text: 'Phastos', correct: false},
+    //         {text: 'Makkari', correct: false},
+    //         {text: 'Ikaris', correct: true}
+    //     ]
+    // }
 ]
