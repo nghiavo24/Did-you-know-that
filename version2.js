@@ -9,7 +9,22 @@
 // - game score gets updated
 // - restarts the game loop if there are more questions
 // - ends game if there are no more questions
+//=============================================================================//
+//Modal
+const openBtn = document.getElementById('openModal');
+const modal = document.getElementById('modal')
+const close = document.getElementById('close')
 
+const openModal = () => {
+  modal.style.display = 'block';
+}
+const closeModal = () => {
+  modal.style.display = 'none'
+}
+openBtn.addEventListener('click', openModal)
+close.addEventListener('click', closeModal)
+
+//=============================================================================//
 const startButton = document.querySelector('.start-btn')
 const nextButton = document.querySelector('.next-btn')
 const questionContainerElement = document.querySelector('#question-container')
