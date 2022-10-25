@@ -7,18 +7,20 @@
 	width: 100%;
 	z-index: 1;
 	overflow: auto;
+    display: none;
 }
 #modal-textbox {
 	background-color: whitesmoke;
 	height: 350px;
 	width: 550px;
-	border-radius: 2px;
+	border-radius: 15px;
 	margin: 150px auto;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     padding: 25px;
-    line-height: 120%;
+    line-height: 1.75em;
     text-align: center;
     font-family: helvetica;
+    
 }
 .modal-buttons {
 	padding: 14px 18px;
@@ -30,8 +32,13 @@
 	font-family: 'Arial';
 	cursor: pointer;
     font-weight: bold;
-    display: grid;
-    
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 1em;
+}
+#close {
+    position: relative;
 }
 
 body {
