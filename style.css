@@ -30,6 +30,8 @@
 	font-family: 'Arial';
 	cursor: pointer;
     font-weight: bold;
+    display: grid;
+    
 }
 
 body {
@@ -41,7 +43,11 @@ body {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: #5E5480;
+    background-image: url("./img/2193205.png");
+    background-size: cover;
+    background-color: #5835B0;
+    background-repeat: no-repeat;
+    
 }
 body.correct{
     background-color: green;
@@ -52,18 +58,19 @@ body.wrong {
 header {
     font-size: 60px;
     color: antiquewhite;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 15px;
+    margin: 5px auto;
 }
 #edition {
     font-style: italic;
     font-size: 45px;
+    
 
 }
 .container{
     display: flex;
     justify-content: center;
-    width: 600px;
+    width: fit-content;
     max-width: 80%;
     padding: 10px;
     border-radius: 5px;

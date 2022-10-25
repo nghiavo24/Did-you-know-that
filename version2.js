@@ -252,7 +252,7 @@ const marvel_questions = [
         ]
     },
     {
-        question: 'WWhich Infinity Stone is in Loki scepter?',
+        question: 'Which Infinity Stone is in Loki scepter?',
         answers: [
             {text: 'Mind', correct: true},
             {text: 'Space', correct: false},
