@@ -42,8 +42,44 @@ const resetButton = document.querySelector('.reset-btn')
 var playerAnswer = null;
 var playerAnswered = false;
 var amountWrong = 0
+var playerScore = 0;
+var j = 0;
+var i = 0;
+var reset = false;
 
 startButton.addEventListener('click', gameStart)
+resetButton.addEventListener('click', resetGame)
+
+async function resetGame(){
+    playerAnswer = null;
+    playerAnswered = false;
+    amountWrong = 0
+    playerScore = 0
+    j = 100;
+    i = 100;
+    reset = true;
+    questionElement.classList.add("hide")
+    resetButton.classList.add("hide")
+    playerNameInput.value = null
+    playerNameInput.classList.remove("hide")
+    startButton.classList.remove("hide")
+    playerHeader.innerText = null
+    scoreHeader.classList.add("hide")
+}
+
+// gets random index in the source array
+// removes from the random element from the source array
+// adds random element into the output array
+function fisherYatesShuffle(sourceArray){
+    outputArray = []
+    length = sourceArray.length
+    for(let x = 0; x < length; x++){
+        randomIndex = randomIntFromInterval(0, sourceArray.length - 1)
+        outputArray.push(sourceArray[randomIndex])
+        sourceArray.splice(randomIndex, 1)
+    }
+    return outputArray
+}
 
 async function gameStart () {
     //  hide/unhide html
@@ -63,11 +99,13 @@ async function gameStart () {
         answerButtons[i].classList.remove("hide")
     }
 
-    let playerScore = 0;
+    playerScore = 0
+    reset = false
 
+    let questions = fisherYatesShuffle(marvel_questions)
     // gameplay loop
-    for(let j = 0; j <marvel_questions.length; j++){
-        let QuestionObject = marvel_questions[j];
+    for(j = 0; j <questions.length; j++){
+        let QuestionObject = questions[j];
         let question = QuestionObject.question
         console.log("-------------------");
         console.log(question);
@@ -77,7 +115,7 @@ async function gameStart () {
 
         // show the answers
         let answers = QuestionObject.answers;
-        for( let i = 0; i < answers.length; i++) {
+        for(i = 0; i < answers.length; i++) {
             let possibleAnswer = answers[i];
             console.log(`${i+1}: ${possibleAnswer.text}`)
             answerButtons[i].innerText = possibleAnswer.text
@@ -110,8 +148,8 @@ async function gameStart () {
         }
 
         // show updated score
-        console.log(`Your score is: ${playerScore}/${marvel_questions.length}`)
-        score.innerText = `${playerScore}/${marvel_questions.length}`
+        console.log(`Your score is: ${playerScore}/${questions.length}`)
+        score.innerText = `${playerScore}/${questions.length}`
 
         await sleep(1000)
 
@@ -150,7 +188,7 @@ function setAnswer(answer_index){
 
 // waits in an infitie loop until playerAnswered is changed to true  (playerAnswered is set to true by setAnswer())
 async function waitUserInput() {
-    while (playerAnswered == false) await sleep(50); // pauses script
+    while (playerAnswered == false && reset == false) await sleep(50); // pauses script
     playerAnswered = false; // reset var
 }
 
@@ -173,76 +211,76 @@ const marvel_questions = [
             {text: 'MJ', correct: false}
         ]
     },
-    // {
-    //     question: 'What kind of doctor is Stephen Strange?',
-    //     answers: [
-    //         {text: 'Orthopedic Surgeon', correct: false},
-    //         {text: 'Plastic Surgeon', correct: false},
-    //         {text: 'Neurosurgeon', correct: true}
-    //     ]
-    // },
-    // {
-    //     question: 'What metal is Wakanda most precious resources?',
-    //     answers: [
-    //         {text: 'Adamantium', correct: false},
-    //         {text: 'Vibranium', correct: true},
-    //         {text: 'Dilithium', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'What kind of cloak does Doctor Strange use?',
-    //     answers: [
-    //         {text: 'Steel', correct: false},
-    //         {text: 'Invincible', correct: false},
-    //         {text: 'Levitation', correct: true}
-    //     ]
-    // },
-    // {
-    //     question: 'What kind of war animal is bred by the Border Tribe in Black Panther?',
-    //     answers: [
-    //         {text: 'Panthers', correct: false},
-    //         {text: 'Rhinos', correct: true},
-    //         {text: 'Lions', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'What is Black Widow final line before she sacrifices herself on Vomir?',
-    //     answers: [
-    //         {text: 'Clint', correct: false},
-    //         {text: 'Let me go', correct: false},
-    //         {text: 'It is okay', correct: true}
-    //     ]
-    // },
-    // {
-    //     question: 'WWhich Infinity Stone is in Loki scepter?',
-    //     answers: [
-    //         {text: 'Mind', correct: true},
-    //         {text: 'Space', correct: false},
-    //         {text: 'Power', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'Which actress plays the role of an elite warrior Thena in the move Eternals?',
-    //     answers: [
-    //         {text: 'Scarlett Johansson', correct: false},
-    //         {text: 'Angelina Jolie', correct: true},
-    //         {text: 'Kim Kardashian', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'What type of herb did the first Black Panther ingest to gain his power?',
-    //     answers: [
-    //         {text: 'Diamond-shaped herb', correct: false},
-    //         {text: 'Moon-shaped herb', correct: true},
-    //         {text: 'Heart-shaped herb', correct: false}
-    //     ]
-    // },
-    // {
-    //     question: 'Which of these Eternals is not names after a Greek or Roman God?',
-    //     answers: [
-    //         {text: 'Phastos', correct: false},
-    //         {text: 'Makkari', correct: false},
-    //         {text: 'Ikaris', correct: true}
-    //     ]
-    // }
+    {
+        question: 'What kind of doctor is Stephen Strange?',
+        answers: [
+            {text: 'Orthopedic Surgeon', correct: false},
+            {text: 'Plastic Surgeon', correct: false},
+            {text: 'Neurosurgeon', correct: true}
+        ]
+    },
+    {
+        question: 'What metal is Wakanda most precious resources?',
+        answers: [
+            {text: 'Adamantium', correct: false},
+            {text: 'Vibranium', correct: true},
+            {text: 'Dilithium', correct: false}
+        ]
+    },
+    {
+        question: 'What kind of cloak does Doctor Strange use?',
+        answers: [
+            {text: 'Steel', correct: false},
+            {text: 'Invincible', correct: false},
+            {text: 'Levitation', correct: true}
+        ]
+    },
+    {
+        question: 'What kind of war animal is bred by the Border Tribe in Black Panther?',
+        answers: [
+            {text: 'Panthers', correct: false},
+            {text: 'Rhinos', correct: true},
+            {text: 'Lions', correct: false}
+        ]
+    },
+    {
+        question: 'What is Black Widow final line before she sacrifices herself on Vomir?',
+        answers: [
+            {text: 'Clint', correct: false},
+            {text: 'Let me go', correct: false},
+            {text: 'It is okay', correct: true}
+        ]
+    },
+    {
+        question: 'WWhich Infinity Stone is in Loki scepter?',
+        answers: [
+            {text: 'Mind', correct: true},
+            {text: 'Space', correct: false},
+            {text: 'Power', correct: false}
+        ]
+    },
+    {
+        question: 'Which actress plays the role of an elite warrior Thena in the move Eternals?',
+        answers: [
+            {text: 'Scarlett Johansson', correct: false},
+            {text: 'Angelina Jolie', correct: true},
+            {text: 'Kim Kardashian', correct: false}
+        ]
+    },
+    {
+        question: 'What type of herb did the first Black Panther ingest to gain his power?',
+        answers: [
+            {text: 'Diamond-shaped herb', correct: false},
+            {text: 'Moon-shaped herb', correct: true},
+            {text: 'Heart-shaped herb', correct: false}
+        ]
+    },
+    {
+        question: 'Which of these Eternals is not names after a Greek or Roman God?',
+        answers: [
+            {text: 'Phastos', correct: false},
+            {text: 'Makkari', correct: false},
+            {text: 'Ikaris', correct: true}
+        ]
+    }
 ]
