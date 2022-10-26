@@ -53,18 +53,18 @@ resetButton.addEventListener('click', resetGame)
 async function resetGame(){
     playerAnswer = null;
     playerAnswered = false;
-    amountWrong = 0
-    playerScore = 0
+    amountWrong = 0;
+    playerScore = 0;
     j = 100;
     i = 100;
     reset = true;
-    questionElement.classList.add("hide")
-    resetButton.classList.add("hide")
-    playerNameInput.value = null
-    playerNameInput.classList.remove("hide")
-    startButton.classList.remove("hide")
-    playerHeader.innerText = null
-    scoreHeader.classList.add("hide")
+    questionElement.classList.add("hide");
+    resetButton.classList.add("hide");
+    playerNameInput.value = null;
+    playerNameInput.classList.remove("hide");
+    startButton.classList.remove("hide");
+    playerHeader.innerText = null;
+    scoreHeader.classList.add("hide");
 }
 
 // gets random index in the source array
@@ -73,6 +73,7 @@ async function resetGame(){
 function fisherYatesShuffle(sourceArray){
     outputArray = []
     length = sourceArray.length
+    console.log('sourceArray', sourceArray)
     for(let x = 0; x < length; x++){
         randomIndex = randomIntFromInterval(0, sourceArray.length - 1)
         outputArray.push(sourceArray[randomIndex])
@@ -94,16 +95,17 @@ async function gameStart () {
     
 
     // add listeners to answer buttons to get the player answer
-    for(let i =0; i < answerButtons.length; i++){
+    for(let i = 0; i < answerButtons.length; i++){
         answerButtons[i].addEventListener('click', () => setAnswer(i))
         answerButtons[i].classList.remove("hide")
     }
 
     playerScore = 0
     reset = false
-
+    console.log(marvel_questions)
     let questions = fisherYatesShuffle(marvel_questions)
     // gameplay loop
+    console.log('questions', questions)
     for(j = 0; j <questions.length; j++){
         let QuestionObject = questions[j];
         let question = QuestionObject.question
@@ -175,9 +177,16 @@ async function gameStart () {
     }
     questionElement.classList.add("hide")
     resetButton.classList.add("hide")
-    playerNameInput.value = null
+    // playerNameInput.value = null
     playerNameInput.classList.remove("hide")
     startButton.classList.remove("hide")
+    if (playerScore < 3) {
+        return("Are you sure that you are not a DC fan?")
+    } else if (playerScore > 3 && playerScore <7) {
+        return("Go back and re-watch all Marvel movies & series!")
+        } else {
+            return("You are the only true Marvel fan!!!")
+        }
 }
 
 // sets the player answer when an answer button is clicked
@@ -201,7 +210,7 @@ function randomIntFromInterval(min, max) { // min and max included
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-// const dc_questions = []
+
 const marvel_questions = [
     {
         question: 'What is Black Widow real name?',
