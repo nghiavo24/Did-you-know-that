@@ -103,7 +103,7 @@ async function gameStart () {
     playerScore = 0
     reset = false
     console.log(marvel_questions)
-    let questions = fisherYatesShuffle(marvel_questions)
+    let questions = fisherYatesShuffle(marvel_questions.slice())
     // gameplay loop
     console.log('questions', questions)
     for(j = 0; j <questions.length; j++){
