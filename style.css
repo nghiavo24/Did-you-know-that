@@ -11,7 +11,7 @@
 }
 #modal-textbox {
 	background-color: whitesmoke;
-	height: 40vw;
+	height: fit-content;
 	width: 60vh;
 	border-radius: 15px;
 	margin: 150px auto;
@@ -20,6 +20,10 @@
     line-height: 1.75em;
     text-align: center;
     font-family: helvetica;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     
 }
 .modal-buttons {
@@ -33,12 +37,22 @@
 	cursor: pointer;
     font-weight: bold;
     position: absolute;
-    top: 20px;
+    top: 50px;
     left: 50px;
     font-size: 1em;
 }
 #close {
-    position: relative;
+    padding: 14px 18px;
+	background-color: #5835B0;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+    font-family: 'Arial';
+	cursor: pointer;
+    font-size: 1.25em;
+    font-weight: bold;
+    width: 30%;
 }
 #myAudio {
     position: absolute;
