@@ -181,12 +181,12 @@ async function gameStart () {
     playerNameInput.classList.remove("hide")
     startButton.classList.remove("hide")
     if (playerScore < 3) {
-        return("Are you sure that you are not a DC fan?")
+        alert("Are you sure that you are not a DC fan?")
     } else if (playerScore > 3 && playerScore <7) {
-        return("Go back and re-watch all Marvel movies & series!")
-        } else {
-            return("You are the only true Marvel fan!!!")
-        }
+        alert("Go back and re-watch all Marvel movies & series!")
+    } else {
+        alert("You are the only true Marvel fan!!!")
+    }
 }
 
 // sets the player answer when an answer button is clicked
