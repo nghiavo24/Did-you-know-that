@@ -17,9 +17,9 @@ Nowsaday, trivia night is more popular than ever and showing up on event calenda
 ## Getting started:
 To play the game, simply enter your name (if desired) in the input box and then click on 'Start' button. The question and available answers will automically show up. You will have to select at least one answer to advance to the next question. When you click on the question, the answer and background will change their background color to Green (the answer is correct) or Red (the answer is incorrect). You will keep answer the question until the game runs out of question. You will be able to reset the game at anytime you wish during the game by clicking on the 'Reset' button (This button will only be available during the game).
 ## Technologies:
-+ HTML
-+ Cascading Style Sheet 
-+ JavaScript 
++ <img src="img/html.svg" width=10% height=10%>
++ <img src="img/css.svg" width=10% height=10%> 
++ <img src="img/javascript.svg" width=10% height=10%>
 
 ## User Experience:
 + As a user, I want to be able to enter your name.
