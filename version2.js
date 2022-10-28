@@ -1,3 +1,4 @@
+//Pseudocode:
 // start the game loop
 // - show the question
 // - show the possible answers
@@ -10,6 +11,7 @@
 // - restarts the game loop if there are more questions
 // - ends game if there are no more questions
 //=============================================================================//
+
 //Modal
 const openBtn = document.getElementById('openModal');
 const modal = document.getElementById('modal')
@@ -73,7 +75,7 @@ async function resetGame(){
 function fisherYatesShuffle(sourceArray){
     outputArray = []
     length = sourceArray.length
-    console.log('sourceArray', sourceArray)
+    // console.log('sourceArray', sourceArray)
     for(let x = 0; x < length; x++){
         randomIndex = randomIntFromInterval(0, sourceArray.length - 1)
         outputArray.push(sourceArray[randomIndex])
@@ -102,15 +104,15 @@ async function gameStart () {
 
     playerScore = 0
     reset = false
-    console.log(marvel_questions)
+    // console.log(marvel_questions)
     let questions = fisherYatesShuffle(marvel_questions.slice())
     // gameplay loop
-    console.log('questions', questions)
+    // console.log('questions', questions)
     for(j = 0; j <questions.length; j++){
         let QuestionObject = questions[j];
         let question = QuestionObject.question
-        console.log("-------------------");
-        console.log(question);
+        // console.log("-------------------");
+        // console.log(question);
         
         // show the question
         questionElement.innerText = question
@@ -119,23 +121,23 @@ async function gameStart () {
         let answers = QuestionObject.answers;
         for(i = 0; i < answers.length; i++) {
             let possibleAnswer = answers[i];
-            console.log(`${i+1}: ${possibleAnswer.text}`)
+            // console.log(`${i+1}: ${possibleAnswer.text}`)
             answerButtons[i].innerText = possibleAnswer.text
         }
 
         
         // wait for player answer
         await waitUserInput()
-        console.log(`You answered:`)
-        console.log(playerAnswer)
+        // console.log(`You answered:`)
+        // console.log(playerAnswer)
 
         // add score and change background color for wrong/right answer
         if(playerAnswer != null && answers[playerAnswer].correct === true){
-            console.log("Thats Correct!")
+            // console.log("Thats Correct!")
             document.body.className = 'correct'
             playerScore += 1;
         }else {
-            console.log("Thats Not Correct!")
+            // console.log("Thats Not Correct!")
             document.body.className = 'wrong'
             amountWrong += 1
         }
@@ -150,7 +152,7 @@ async function gameStart () {
         }
 
         // show updated score
-        console.log(`Your score is: ${playerScore}/${questions.length}`)
+        // console.log(`Your score is: ${playerScore}/${questions.length}`)
         score.innerText = `${playerScore}/${questions.length}`
 
         await sleep(1000)
