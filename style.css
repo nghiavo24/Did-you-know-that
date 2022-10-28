@@ -19,12 +19,12 @@
     padding: 25px;
     line-height: 1.75em;
     text-align: center;
-    font-family: helvetica;
+    font-family: "Cardo", serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.25em;
 
-    
 }
 .modal-buttons {
 	padding: 14px 18px;
@@ -33,11 +33,11 @@
 	outline: none;
 	border-radius: 3px;
 	color: white;
-	font-family: 'Arial';
+	font-family: "Cardo", serif;
 	cursor: pointer;
     font-weight: bold;
     position: absolute;
-    top: 50px;
+    bottom: 50px;
     left: 50px;
     font-size: 1em;
 }
@@ -48,7 +48,8 @@
 	outline: none;
 	border-radius: 3px;
 	color: white;
-    font-family: 'Arial';
+    font-family: "Cardo", serif;
+    font-weight: bold;
 	cursor: pointer;
     font-size: 1.25em;
     font-weight: bold;
@@ -56,17 +57,17 @@
 }
 #myAudio {
     position: absolute;
-    left: 50px;
-    top: 125px;
+    left: 300px;
+    bottom: 50px;
     
 }
 body {
-    padding: 0;
     margin: 0; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: nowrap;
     width: 100vw;
     height: 100vh;
     background-image: url("./img/2193205.png");
@@ -74,6 +75,7 @@ body {
     background-color: #5835B0;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: "Cardo", serif;
     
 }
 body.correct{
@@ -85,18 +87,17 @@ body.wrong {
 header {
     position: absolute;
     text-align: center;
-    font-size: 40px;
-    padding: 10px;
-    margin: 0px auto;
+    font-size: 2em;
+    padding: 0.25em;
     background-color: rgba(0, 0, 0, 0.8);
-    color: antiquewhite;
-    top: 100px;
+    color: whitesmoke;
     text-transform: uppercase;
-    width: 50%;
+    width: fit-content;
+    top: 10px
 }
 #edition {
     font-style: italic;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .container{
     display: flex;
@@ -113,6 +114,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 .btn-grid {
     display: grid;
@@ -127,6 +129,8 @@ header {
     padding: 10px 15px;
     color: white;
     outline: none;
+    font-family: 'Cardo', serif;
+    font-size: 1.25em;
 }
 .btn:hover {
     border-color: 2px black;
