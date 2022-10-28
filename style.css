@@ -133,11 +133,11 @@ header {
     font-size: 1.25em;
 }
 .btn:hover {
-    border-color: 2px black;
-    background-color: white;
-    color: black
+    background-color: black;
+    color: white;
+    border: 3px black;
+    cursor: pointer;
 }
-
 .btn.correct {
     background-color: green;
     color: black;
@@ -147,7 +147,6 @@ header {
     background-color: red;
     border-color: red;
     color: white;
-
 }
 .start-btn, .reset-btn {
     font-size: 1.5rem;
