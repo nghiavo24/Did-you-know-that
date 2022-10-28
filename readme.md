@@ -5,10 +5,14 @@ Trivia is defined as little-known facts or unimportant matters. Examples of triv
 Nowsaday, trivia night is more popular than ever and showing up on event calendars at bars, breweries, and restaurants - even local coffee shops and senior centers. It creates a sense of community and a lively atmosphere that invites more people to join in the fun.
 
 ## Wireframes
-+ Before:
-![Planning phase's wireframe]()
-+ After:
-
+### Before:
+![Planning phase's wireframe](img/preplan.png)
+### After:
+![Post-plan wireframe](img/postproject.png)
+### Instructions Modal:
+![Instruction Modal](img/modal.png)
+### Main Content:
+![Main Content](img/maincontent.png)
 
 ## Getting started:
 To play the game, simply enter your name (if desired) in the input box and then click on 'Start' button. The question and available answers will automically show up. You will have to select at least one answer to advance to the next question. When you click on the question, the answer and background will change their background color to Green (the answer is correct) or Red (the answer is incorrect). You will keep answer the question until the game runs out of question. You will be able to reset the game at anytime you wish during the game by clicking on the 'Reset' button (This button will only be available during the game).
