@@ -16,10 +16,7 @@ Nowsaday, trivia night is more popular than ever and showing up on event calenda
 
 ## Getting started:
 To play the game, simply enter your name (if desired) in the input box and then click on 'Start' button. The question and available answers will automically show up. You will have to select at least one answer to advance to the next question. When you click on the question, the answer and background will change their background color to Green (the answer is correct) or Red (the answer is incorrect). You will keep answer the question until the game runs out of question. You will be able to reset the game at anytime you wish during the game by clicking on the 'Reset' button (This button will only be available during the game).
-## Technologies:
-+ <img src="img/html.svg" width=10% height=10%>
-+ <img src="img/css.svg" width=10% height=10%> 
-+ <img src="img/javascript.svg" width=10% height=10%>
+
 
 ## User Experience:
 + As a user, I want to be able to enter your name.
@@ -39,6 +36,18 @@ To play the game, simply enter your name (if desired) in the input box and then 
 + Add celebration at the end if you achieve beat the the level.
 + Create a leaderboard to keep high scores.
 
+## Major Hurdles:
++ The biggest issue I had was to break down my plan into even smaller tasks. And from smaller tasks, I needed to translate that into write-able code. I still did not have this mind-set of a software engineer yet. 
++ Another struggle was to style my project. There were so many ideas and sometimes my mind ran wild. Therefore, I had to write down my color theme, backbground, etc. so that I could stay on track. Also, CSS was quite unpredictable as well. 
+
+## Installation Instruction:
++ You use have to use a brower and go to this [link]!(https://nghiavo24.github.io/Did-you-know-that/)
+
+## Technologies:
++ <img src="img/html.svg" width=10% height=10%>
++ <img src="img/css.svg" width=10% height=10%> 
++ <img src="img/javascript.svg" width=10% height=10%>
+
 ## Resources/Credits:
 + [TRIVIAL PURSUITS: From Where Does the Word Trivia Come?](https://www.plansponsor.com/trivial-pursuits-word-trivia-come/?layout=print)
 + [Markdown Here Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet#images)
@@ -49,3 +58,4 @@ To play the game, simply enter your name (if desired) in the input box and then 
 + [Alan Silvestri - Portals (From "Avengers: Endgame"/Audio Only)](https://www.youtube.com/watch?v=F_mhWxOjxp4)
 + [Audio controls Property](https://www.w3schools.com/jsref/prop_audio_controls.asp)
 + [Modal Intro](https://git.generalassemb.ly/seir-323/modals_intro/tree/js-dom-manipulation)
++ [Audio autoplay Property](https://www.w3schools.com/jsref/prop_audio_autoplay.asp)
