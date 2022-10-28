@@ -6,6 +6,8 @@ Nowsaday, trivia night is more popular than ever and showing up on event calenda
 
 ## Wireframes
 + Before:
+![Planning phase's wireframe]()
++ After:
 
 
 ## Getting started:
